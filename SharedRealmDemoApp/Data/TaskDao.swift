@@ -12,7 +12,7 @@ final class TaskDao {
     static func add(entity: TaskEntity) {
         let dao = RealmDaoHelper<TaskEntity>()
         let object = TaskEntity(value: entity)
-        dao.realm.add(object)
+        dao.add(d: object)
     }
     
     static func delete(taskId: Int) {
@@ -20,6 +20,6 @@ final class TaskDao {
         guard let object = dao.findById(id: taskId as AnyObject) else {
             return
         }
-        dao.realm.delete(object)
+        dao.delete(d: object)
     }
 }

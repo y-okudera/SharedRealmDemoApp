@@ -12,7 +12,7 @@ final class FolderDao {
     static func add(entity: FolderEntity) {
         let dao = RealmDaoHelper<FolderEntity>()
         let object = FolderEntity(value: entity)
-        dao.realm.add(object)
+        dao.add(d: object)
     }
     
     static func deleteAllTasks(folderId: Int) {
@@ -40,7 +40,7 @@ final class FolderDao {
     
     static func update(entity: FolderEntity) {
         let dao = RealmDaoHelper<FolderEntity>()
-        dao.realm.add(entity, update: .modified)
+        dao.update(d: entity)
     }
     
     static func findById(folderId: Int) -> FolderEntity? {

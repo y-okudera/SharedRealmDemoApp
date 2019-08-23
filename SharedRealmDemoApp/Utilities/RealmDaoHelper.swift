@@ -32,6 +32,12 @@ final class RealmDaoHelper <T: RealmSwift.Object> {
 
     /// レコード追加
     func add(d: T) {
+        
+        if RealmDaoHelper.isInWriteTransaction() {
+            realm.add(d)
+            return
+        }
+        
         do {
             try realm.write {
                 realm.add(d)
@@ -44,7 +50,15 @@ final class RealmDaoHelper <T: RealmSwift.Object> {
     // MARK: - Update record
 
     /// T: RealmSwift.Object で primaryKey()が実装されている時のみ有効
+    @discardableResult
     func update(d: T, block:(() -> Void)? = nil) -> Bool {
+        
+        if RealmDaoHelper.isInWriteTransaction() {
+            block?()
+            realm.add(d, update: .modified)
+            return true
+        }
+        
         do {
             try realm.write {
                 block?()
@@ -62,6 +76,12 @@ final class RealmDaoHelper <T: RealmSwift.Object> {
     /// レコード全削除
     func deleteAll() -> Bool {
         let objs = realm.objects(T.self)
+        
+        if RealmDaoHelper.isInWriteTransaction() {
+            realm.delete(objs)
+            return true
+        }
+        
         do {
             try realm.write {
                 realm.delete(objs)
@@ -74,7 +94,14 @@ final class RealmDaoHelper <T: RealmSwift.Object> {
     }
 
     /// レコード削除
+    @discardableResult
     func delete(d: T) -> Bool {
+        
+        if RealmDaoHelper.isInWriteTransaction() {
+            realm.delete(d)
+            return true
+        }
+        
         do {
             try realm.write {
                 realm.delete(d)
@@ -105,6 +132,10 @@ final class RealmDaoHelper <T: RealmSwift.Object> {
 }
 
 extension RealmDaoHelper {
+    
+    static func isInWriteTransaction() -> Bool {
+        return Realm.sharedRealm().isInWriteTransaction
+    }
     
     static func transaction(block:(() -> Void)? = nil) {
         let realm = Realm.sharedRealm()
