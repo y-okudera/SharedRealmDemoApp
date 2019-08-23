@@ -14,6 +14,17 @@
 		64EA21EA230FA866007BE3EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EA21E8230FA866007BE3EE /* LaunchScreen.storyboard */; };
 		64EA21F5230FA866007BE3EE /* SharedRealmDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA21F4230FA866007BE3EE /* SharedRealmDemoAppTests.swift */; };
 		64EA2200230FA866007BE3EE /* SharedRealmDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA21FF230FA866007BE3EE /* SharedRealmDemoAppUITests.swift */; };
+		64EA2210230FA992007BE3EE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EA220E230FA992007BE3EE /* Realm.framework */; };
+		64EA2211230FA992007BE3EE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EA220F230FA992007BE3EE /* RealmSwift.framework */; };
+		64EA2219230FA9F5007BE3EE /* RealmInitializerCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2214230FA9F5007BE3EE /* RealmInitializerCompatible.swift */; };
+		64EA221A230FA9F5007BE3EE /* RealmDaoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2215230FA9F5007BE3EE /* RealmDaoHelper.swift */; };
+		64EA221C230FA9F5007BE3EE /* RealmInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2217230FA9F5007BE3EE /* RealmInitializer.swift */; };
+		64EA221D230FA9F5007BE3EE /* Realm+WriteAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2218230FA9F5007BE3EE /* Realm+WriteAsync.swift */; };
+		64EA223A230FAAE8007BE3EE /* Realm+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2239230FAAE8007BE3EE /* Realm+Shared.swift */; };
+		64EA223D230FC16A007BE3EE /* FolderDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA223C230FC16A007BE3EE /* FolderDao.swift */; };
+		64EA223F230FC19B007BE3EE /* TaskDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA223E230FC19B007BE3EE /* TaskDao.swift */; };
+		64EA2241230FC1B1007BE3EE /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2240230FC1B1007BE3EE /* TaskEntity.swift */; };
+		64EA2243230FC1D4007BE3EE /* FolderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2242230FC1D4007BE3EE /* FolderEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +58,17 @@
 		64EA21FB230FA866007BE3EE /* SharedRealmDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedRealmDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64EA21FF230FA866007BE3EE /* SharedRealmDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRealmDemoAppUITests.swift; sourceTree = "<group>"; };
 		64EA2201230FA866007BE3EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64EA220E230FA992007BE3EE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		64EA220F230FA992007BE3EE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		64EA2214230FA9F5007BE3EE /* RealmInitializerCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInitializerCompatible.swift; sourceTree = "<group>"; };
+		64EA2215230FA9F5007BE3EE /* RealmDaoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDaoHelper.swift; sourceTree = "<group>"; };
+		64EA2217230FA9F5007BE3EE /* RealmInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInitializer.swift; sourceTree = "<group>"; };
+		64EA2218230FA9F5007BE3EE /* Realm+WriteAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+WriteAsync.swift"; sourceTree = "<group>"; };
+		64EA2239230FAAE8007BE3EE /* Realm+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Shared.swift"; sourceTree = "<group>"; };
+		64EA223C230FC16A007BE3EE /* FolderDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDao.swift; sourceTree = "<group>"; };
+		64EA223E230FC19B007BE3EE /* TaskDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDao.swift; sourceTree = "<group>"; };
+		64EA2240230FC1B1007BE3EE /* TaskEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntity.swift; sourceTree = "<group>"; };
+		64EA2242230FC1D4007BE3EE /* FolderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64EA2210230FA992007BE3EE /* Realm.framework in Frameworks */,
+				64EA2211230FA992007BE3EE /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +105,7 @@
 				64EA21F3230FA866007BE3EE /* SharedRealmDemoAppTests */,
 				64EA21FE230FA866007BE3EE /* SharedRealmDemoAppUITests */,
 				64EA21DD230FA864007BE3EE /* Products */,
+				64EA220D230FA992007BE3EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +122,8 @@
 		64EA21DE230FA864007BE3EE /* SharedRealmDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				64EA223B230FC157007BE3EE /* Data */,
+				64EA2213230FA9D4007BE3EE /* Utilities */,
 				64EA21DF230FA864007BE3EE /* AppDelegate.swift */,
 				64EA21E1230FA864007BE3EE /* ViewController.swift */,
 				64EA21E3230FA864007BE3EE /* Main.storyboard */,
@@ -125,6 +152,38 @@
 			path = SharedRealmDemoAppUITests;
 			sourceTree = "<group>";
 		};
+		64EA220D230FA992007BE3EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64EA220E230FA992007BE3EE /* Realm.framework */,
+				64EA220F230FA992007BE3EE /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64EA2213230FA9D4007BE3EE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				64EA2218230FA9F5007BE3EE /* Realm+WriteAsync.swift */,
+				64EA2215230FA9F5007BE3EE /* RealmDaoHelper.swift */,
+				64EA2217230FA9F5007BE3EE /* RealmInitializer.swift */,
+				64EA2214230FA9F5007BE3EE /* RealmInitializerCompatible.swift */,
+				64EA2239230FAAE8007BE3EE /* Realm+Shared.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		64EA223B230FC157007BE3EE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				64EA223C230FC16A007BE3EE /* FolderDao.swift */,
+				64EA2242230FC1D4007BE3EE /* FolderEntity.swift */,
+				64EA223E230FC19B007BE3EE /* TaskDao.swift */,
+				64EA2240230FC1B1007BE3EE /* TaskEntity.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +194,7 @@
 				64EA21D8230FA864007BE3EE /* Sources */,
 				64EA21D9230FA864007BE3EE /* Frameworks */,
 				64EA21DA230FA864007BE3EE /* Resources */,
+				64EA2212230FA999007BE3EE /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -251,12 +311,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		64EA2212230FA999007BE3EE /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64EA21D8230FA864007BE3EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64EA221A230FA9F5007BE3EE /* RealmDaoHelper.swift in Sources */,
 				64EA21E2230FA864007BE3EE /* ViewController.swift in Sources */,
+				64EA223F230FC19B007BE3EE /* TaskDao.swift in Sources */,
+				64EA223D230FC16A007BE3EE /* FolderDao.swift in Sources */,
+				64EA2219230FA9F5007BE3EE /* RealmInitializerCompatible.swift in Sources */,
+				64EA2241230FC1B1007BE3EE /* TaskEntity.swift in Sources */,
+				64EA221D230FA9F5007BE3EE /* Realm+WriteAsync.swift in Sources */,
+				64EA221C230FA9F5007BE3EE /* RealmInitializer.swift in Sources */,
+				64EA223A230FAAE8007BE3EE /* Realm+Shared.swift in Sources */,
+				64EA2243230FC1D4007BE3EE /* FolderEntity.swift in Sources */,
 				64EA21E0230FA864007BE3EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,7 +526,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8PR34D6DP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SharedRealmDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,7 +549,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8PR34D6DP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SharedRealmDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
