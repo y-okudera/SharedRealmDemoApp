@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		64EA21E0230FA864007BE3EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA21DF230FA864007BE3EE /* AppDelegate.swift */; };
-		64EA21E2230FA864007BE3EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA21E1230FA864007BE3EE /* ViewController.swift */; };
-		64EA21E5230FA864007BE3EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EA21E3230FA864007BE3EE /* Main.storyboard */; };
 		64EA21E7230FA866007BE3EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64EA21E6230FA866007BE3EE /* Assets.xcassets */; };
 		64EA21EA230FA866007BE3EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EA21E8230FA866007BE3EE /* LaunchScreen.storyboard */; };
 		64EA21F5230FA866007BE3EE /* SharedRealmDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA21F4230FA866007BE3EE /* SharedRealmDemoAppTests.swift */; };
@@ -25,6 +23,13 @@
 		64EA223F230FC19B007BE3EE /* TaskDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA223E230FC19B007BE3EE /* TaskDao.swift */; };
 		64EA2241230FC1B1007BE3EE /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2240230FC1B1007BE3EE /* TaskEntity.swift */; };
 		64EA2243230FC1D4007BE3EE /* FolderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EA2242230FC1D4007BE3EE /* FolderEntity.swift */; };
+		B6E46C6D231100B3006BC1F5 /* ExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E46C6C231100B3006BC1F5 /* ExceptionHandler.m */; };
+		B6E46C6F231100E2006BC1F5 /* ExceptionCatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E46C6E231100E2006BC1F5 /* ExceptionCatchable.swift */; };
+		B6E46C7523111F28006BC1F5 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E46C7323111F28006BC1F5 /* UIAlertController+Extensions.swift */; };
+		B6E46C7623111F28006BC1F5 /* UIViewController+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E46C7423111F28006BC1F5 /* UIViewController+Current.swift */; };
+		B6E46C7C231139A1006BC1F5 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E46C7B231139A1006BC1F5 /* TopViewController.swift */; };
+		B6E46C7E231139AA006BC1F5 /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E46C7D231139AA006BC1F5 /* TopViewController.storyboard */; };
+		B6E46C80231139F2006BC1F5 /* TopViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E46C7F231139F2006BC1F5 /* TopViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +52,6 @@
 /* Begin PBXFileReference section */
 		64EA21DC230FA864007BE3EE /* SharedRealmDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedRealmDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64EA21DF230FA864007BE3EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64EA21E1230FA864007BE3EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		64EA21E4230FA864007BE3EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64EA21E6230FA866007BE3EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64EA21E9230FA866007BE3EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64EA21EB230FA866007BE3EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +72,15 @@
 		64EA223E230FC19B007BE3EE /* TaskDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDao.swift; sourceTree = "<group>"; };
 		64EA2240230FC1B1007BE3EE /* TaskEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntity.swift; sourceTree = "<group>"; };
 		64EA2242230FC1D4007BE3EE /* FolderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEntity.swift; sourceTree = "<group>"; };
+		B6E46C6A231100B2006BC1F5 /* SharedRealmDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SharedRealmDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		B6E46C6B231100B3006BC1F5 /* ExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionHandler.h; sourceTree = "<group>"; };
+		B6E46C6C231100B3006BC1F5 /* ExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExceptionHandler.m; sourceTree = "<group>"; };
+		B6E46C6E231100E2006BC1F5 /* ExceptionCatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionCatchable.swift; sourceTree = "<group>"; };
+		B6E46C7323111F28006BC1F5 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		B6E46C7423111F28006BC1F5 /* UIViewController+Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Current.swift"; sourceTree = "<group>"; };
+		B6E46C7B231139A1006BC1F5 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		B6E46C7D231139AA006BC1F5 /* TopViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopViewController.storyboard; sourceTree = "<group>"; };
+		B6E46C7F231139F2006BC1F5 /* TopViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +134,12 @@
 		64EA21DE230FA864007BE3EE /* SharedRealmDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				B6E46C77231138D1006BC1F5 /* Application */,
 				64EA223B230FC157007BE3EE /* Data */,
+				B6E46C7923113984006BC1F5 /* Presenter */,
+				B6E46C7823113925006BC1F5 /* Resources */,
 				64EA2213230FA9D4007BE3EE /* Utilities */,
-				64EA21DF230FA864007BE3EE /* AppDelegate.swift */,
-				64EA21E1230FA864007BE3EE /* ViewController.swift */,
-				64EA21E3230FA864007BE3EE /* Main.storyboard */,
-				64EA21E6230FA866007BE3EE /* Assets.xcassets */,
-				64EA21E8230FA866007BE3EE /* LaunchScreen.storyboard */,
-				64EA21EB230FA866007BE3EE /* Info.plist */,
+				B6E46C7A2311398B006BC1F5 /* Views */,
 			);
 			path = SharedRealmDemoApp;
 			sourceTree = "<group>";
@@ -164,11 +174,10 @@
 		64EA2213230FA9D4007BE3EE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				64EA2218230FA9F5007BE3EE /* Realm+WriteAsync.swift */,
-				64EA2215230FA9F5007BE3EE /* RealmDaoHelper.swift */,
-				64EA2217230FA9F5007BE3EE /* RealmInitializer.swift */,
-				64EA2214230FA9F5007BE3EE /* RealmInitializerCompatible.swift */,
-				64EA2239230FAAE8007BE3EE /* Realm+Shared.swift */,
+				B6E46C7223111F16006BC1F5 /* Alert */,
+				B6E46C71231104A8006BC1F5 /* ExceptionHandler */,
+				B6E46C7023110481006BC1F5 /* Realm */,
+				B6E46C6A231100B2006BC1F5 /* SharedRealmDemoApp-Bridging-Header.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -182,6 +191,72 @@
 				64EA2240230FC1B1007BE3EE /* TaskEntity.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		B6E46C7023110481006BC1F5 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				64EA2239230FAAE8007BE3EE /* Realm+Shared.swift */,
+				64EA2218230FA9F5007BE3EE /* Realm+WriteAsync.swift */,
+				64EA2215230FA9F5007BE3EE /* RealmDaoHelper.swift */,
+				64EA2217230FA9F5007BE3EE /* RealmInitializer.swift */,
+				64EA2214230FA9F5007BE3EE /* RealmInitializerCompatible.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		B6E46C71231104A8006BC1F5 /* ExceptionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				B6E46C6E231100E2006BC1F5 /* ExceptionCatchable.swift */,
+				B6E46C6B231100B3006BC1F5 /* ExceptionHandler.h */,
+				B6E46C6C231100B3006BC1F5 /* ExceptionHandler.m */,
+			);
+			path = ExceptionHandler;
+			sourceTree = "<group>";
+		};
+		B6E46C7223111F16006BC1F5 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				B6E46C7323111F28006BC1F5 /* UIAlertController+Extensions.swift */,
+				B6E46C7423111F28006BC1F5 /* UIViewController+Current.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		B6E46C77231138D1006BC1F5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				64EA21DF230FA864007BE3EE /* AppDelegate.swift */,
+				64EA21EB230FA866007BE3EE /* Info.plist */,
+				64EA21E8230FA866007BE3EE /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B6E46C7823113925006BC1F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64EA21E6230FA866007BE3EE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B6E46C7923113984006BC1F5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B6E46C7F231139F2006BC1F5 /* TopViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B6E46C7A2311398B006BC1F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6E46C7D231139AA006BC1F5 /* TopViewController.storyboard */,
+				B6E46C7B231139A1006BC1F5 /* TopViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +328,7 @@
 				TargetAttributes = {
 					64EA21DB230FA864007BE3EE = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					64EA21EF230FA866007BE3EE = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -290,8 +366,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				64EA21EA230FA866007BE3EE /* LaunchScreen.storyboard in Resources */,
+				B6E46C7E231139AA006BC1F5 /* TopViewController.storyboard in Resources */,
 				64EA21E7230FA866007BE3EE /* Assets.xcassets in Resources */,
-				64EA21E5230FA864007BE3EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +416,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				64EA221A230FA9F5007BE3EE /* RealmDaoHelper.swift in Sources */,
-				64EA21E2230FA864007BE3EE /* ViewController.swift in Sources */,
+				B6E46C7623111F28006BC1F5 /* UIViewController+Current.swift in Sources */,
+				B6E46C6D231100B3006BC1F5 /* ExceptionHandler.m in Sources */,
+				B6E46C7C231139A1006BC1F5 /* TopViewController.swift in Sources */,
+				B6E46C6F231100E2006BC1F5 /* ExceptionCatchable.swift in Sources */,
+				B6E46C7523111F28006BC1F5 /* UIAlertController+Extensions.swift in Sources */,
+				B6E46C80231139F2006BC1F5 /* TopViewPresenter.swift in Sources */,
 				64EA223F230FC19B007BE3EE /* TaskDao.swift in Sources */,
 				64EA223D230FC16A007BE3EE /* FolderDao.swift in Sources */,
 				64EA2219230FA9F5007BE3EE /* RealmInitializerCompatible.swift in Sources */,
@@ -385,14 +466,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		64EA21E3230FA864007BE3EE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64EA21E4230FA864007BE3EE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		64EA21E8230FA866007BE3EE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -524,13 +597,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8PR34D6DP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = SharedRealmDemoApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SharedRealmDemoApp/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,6 +612,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.yuoku.SharedRealmDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SharedRealmDemoApp/Utilities/SharedRealmDemoApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -547,13 +623,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8PR34D6DP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = SharedRealmDemoApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SharedRealmDemoApp/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -561,6 +638,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.yuoku.SharedRealmDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SharedRealmDemoApp/Utilities/SharedRealmDemoApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

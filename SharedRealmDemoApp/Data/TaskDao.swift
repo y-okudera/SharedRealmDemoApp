@@ -8,18 +8,28 @@
 
 import Foundation
 
+protocol TaskDaoDelegate: class {
+    func caughtError(taskDao: TaskDao, error: Error)
+}
+
 final class TaskDao {
-    static func add(entity: TaskEntity) {
+
+    weak var delegate: TaskDaoDelegate?
+
+    /// taskIdを指定して、タスクを削除する
+    func delete(taskId: Int) -> Bool {
         let dao = RealmDaoHelper<TaskEntity>()
-        let object = TaskEntity(value: entity)
-        dao.add(d: object)
-    }
-    
-    static func delete(taskId: Int) {
-        let dao = RealmDaoHelper<TaskEntity>()
-        guard let object = dao.findById(id: taskId as AnyObject) else {
-            return
+        guard let object = dao.findById(id: taskId) else {
+            return false
         }
-        dao.delete(d: object)
+
+        do {
+            try dao.delete(d: object)
+            return true
+        } catch {
+            print("delete(taskId: Int)", error)
+            delegate?.caughtError(taskDao: self, error: error)
+            return false
+        }
     }
 }

@@ -8,46 +8,100 @@
 
 import Foundation
 
+protocol FolderDaoDelegate: class {
+    func caughtError(folderDao: FolderDao, error: Error)
+}
+
 final class FolderDao {
-    static func add(entity: FolderEntity) {
+
+    weak var delegate: (FolderDaoDelegate & TaskDaoDelegate)?
+    private var taskDao: TaskDao
+
+    init() {
+        taskDao = TaskDao()
+        taskDao.delegate = delegate
+    }
+
+    /// フォルダを新規登録する
+    func add(entity: FolderEntity) {
         let dao = RealmDaoHelper<FolderEntity>()
         let object = FolderEntity(value: entity)
-        dao.add(d: object)
+        do {
+            try dao.add(d: object)
+        } catch {
+            print("add(entity: FolderEntity)", error)
+            delegate?.caughtError(folderDao: self, error: error)
+        }
     }
-    
-    static func deleteAllTasks(folderId: Int) {
+
+    /// 対象フォルダ内のタスクを全部削除する
+    ///
+    /// フォルダの更新日を現在の日付で更新する
+    func deleteAllTasks(folderId: Int) {
         
         guard let folder = findById(folderId: folderId) else {
             return
         }
-        
-        RealmDaoHelper.transaction {
-            // フォルダ内のタスクを削除
-            folder.taskList.forEach {
-                TaskDao.delete(taskId: $0.taskId)
+
+        do {
+            try RealmDaoHelper.transaction { [weak self] in
+
+                guard let weakSelf = self else {
+                    return
+                }
+                // フォルダ内のタスクを削除
+                folder.taskList.forEach {
+                    let taskDeleteResult = weakSelf.taskDao.delete(taskId: $0.taskId)
+                    if !taskDeleteResult {
+                        return
+                    }
+                }
+
+                let now = Date()
+                // フォルダを更新
+                let updatedFolder = FolderEntity(
+                    folderId: folder.folderId,
+                    title: folder.title,
+                    lastUpdated: now,
+                    taskList: []
+                )
+                weakSelf.update(entity: updatedFolder)
             }
-            
-            // フォルダを更新
-            let updatedFolder = FolderEntity(
-                folderId: folder.folderId,
-                title: folder.title,
-                lastUpdated: folder.lastUpdated,
-                taskList: []
-            )
-            update(entity: updatedFolder)
+        } catch {
+            print("deleteAllTasks(folderId: Int)", error)
+            delegate?.caughtError(folderDao: self, error: error)
         }
     }
-    
-    static func update(entity: FolderEntity) {
-        let dao = RealmDaoHelper<FolderEntity>()
-        dao.update(d: entity)
-    }
-    
-    static func findById(folderId: Int) -> FolderEntity? {
-        let dao = RealmDaoHelper<FolderEntity>()
-        guard let object = dao.findById(id: folderId as AnyObject) else {
-            return nil
+
+    /// 対象フォルダを削除する(フォルダ内のタスクは削除しない)
+    func delete(folderId: Int) {
+        guard let folder = findById(folderId: folderId) else {
+            return
         }
-        return FolderEntity(value: object)
+        let dao = RealmDaoHelper<FolderEntity>()
+
+        do {
+            try dao.delete(d: folder)
+        } catch {
+            print("delete(folderId: Int)", error)
+            delegate?.caughtError(folderDao: self, error: error)
+        }
+    }
+
+    /// フォルダ情報を更新する
+    func update(entity: FolderEntity) {
+        let dao = RealmDaoHelper<FolderEntity>()
+        do {
+            try dao.update(d: entity)
+        } catch {
+            print("update(entity: FolderEntity)", error)
+            delegate?.caughtError(folderDao: self, error: error)
+        }
+    }
+
+    /// folderIdを指定して、フォルダ情報を取得する
+    func findById(folderId: Int) -> FolderEntity? {
+        let dao = RealmDaoHelper<FolderEntity>()
+        return dao.findById(id: folderId)
     }
 }
