@@ -27,7 +27,25 @@ final class TaskDao {
             try dao.delete(d: object)
             return true
         } catch {
-            print("delete(taskId: Int)", error)
+            print("delete(taskId: Int) ERROR", error)
+            delegate?.caughtError(taskDao: self, error: error)
+            return false
+        }
+    }
+    
+    /// taskIdを複数指定して、タスクを削除する
+    @discardableResult
+    func delete(taskIds: [Int]) -> Bool {
+        let dao = RealmDaoHelper<TaskEntity>()
+        guard let objects = dao.findByIds(ids: taskIds) else {
+            return false
+        }
+        
+        do {
+            try dao.delete(objects: objects)
+            return true
+        } catch {
+            print("delete(taskIds: [Int]) ERROR", error)
             delegate?.caughtError(taskDao: self, error: error)
             return false
         }

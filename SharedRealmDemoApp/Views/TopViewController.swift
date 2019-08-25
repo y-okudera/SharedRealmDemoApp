@@ -18,9 +18,7 @@ final class TopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let path = NSHomeDirectory()
-        print("HomeDirectory:", path)
+        print("HomeDirectory:", NSHomeDirectory())
     }
     
     override func viewDidAppear(_ animated: Bool) {

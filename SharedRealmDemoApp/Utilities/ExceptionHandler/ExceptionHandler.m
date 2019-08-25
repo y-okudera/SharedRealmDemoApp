@@ -19,7 +19,14 @@
 #if DEBUG
         NSLog(@"例外発生!: %@", exception);
 #endif
-        *error = [NSError errorWithDomain:exception.name code:-9999 userInfo:exception.userInfo];
+        NSString *domain = [NSString stringWithFormat:@"%@.ExceptionHandler", [NSBundle mainBundle].bundleIdentifier];
+        NSMutableDictionary * info = [NSMutableDictionary dictionary];
+        info[@"ExceptionName"] = exception.name;
+        info[@"ExceptionReason"] = exception.reason;
+        info[@"ExceptionCallStackReturnAddresses"] = exception.callStackReturnAddresses;
+        info[@"ExceptionCallStackSymbols"] = exception.callStackSymbols;
+        info[@"ExceptionUserInfo"] = exception.userInfo;
+        *error = [[NSError alloc] initWithDomain:domain code:-9999 userInfo:info];
         return NO;
     }
 }

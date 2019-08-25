@@ -50,12 +50,8 @@ final class FolderDao {
                     return
                 }
                 // フォルダ内のタスクを削除
-                folder.taskList.forEach {
-                    let taskDeleteResult = weakSelf.taskDao.delete(taskId: $0.taskId)
-                    if !taskDeleteResult {
-                        return
-                    }
-                }
+                let taskIds = Array(folder.taskList).map { $0.taskId }
+                weakSelf.taskDao.delete(taskIds: taskIds)
 
                 let now = Date()
                 // フォルダを更新

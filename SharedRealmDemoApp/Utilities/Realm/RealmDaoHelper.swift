@@ -42,6 +42,20 @@ final class RealmDaoHelper <T: RealmSwift.Object>: ExceptionCatchable {
             throw executionError
         }
     }
+    
+    /// レコード追加(複数)
+    func add(objects: [T]) throws {
+        let realm = Realm.sharedRealm()
+        
+        let executionError = executionBlock(realm: realm) {
+            realm.add(objects)
+        }
+        
+        // エラーがある場合throw
+        if let executionError = executionError {
+            throw executionError
+        }
+    }
 
     // MARK: - Update record
 
@@ -90,6 +104,20 @@ final class RealmDaoHelper <T: RealmSwift.Object>: ExceptionCatchable {
             throw executionError
         }
     }
+    
+    /// レコード削除(複数)
+    func delete(objects: Results<T>) throws {
+        let realm = Realm.sharedRealm()
+        
+        let executionError = executionBlock(realm: realm) {
+            realm.delete(objects)
+        }
+        
+        // エラーがある場合throw
+        if let executionError = executionError {
+            throw executionError
+        }
+    }
 
     // MARK: - Find records
 
@@ -108,6 +136,17 @@ final class RealmDaoHelper <T: RealmSwift.Object>: ExceptionCatchable {
     func findById(id: Any) -> T? {
         let realm = Realm.sharedRealm()
         return realm.object(ofType: T.self, forPrimaryKey: id)
+    }
+    
+    /// 指定キーのレコードを取得(複数)
+    func findByIds(ids: [Any]) -> Results<T>? {
+        guard let pk = T.primaryKey() else {
+            return nil
+        }
+        let predicate = NSPredicate(format: "\(pk) IN %@", ids)
+        let realm = Realm.sharedRealm()
+        let results = realm.objects(T.self).filter(predicate)
+        return results
     }
 }
 
